@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>tianjia</h1>
+<form  th:action="@{/user/adduser}" method="post">
+    <input type="text" name="username"><br/>
+    <input type="text" name="usersex"><br/>
+    <input type="submit" value="OK"/>
+</form>
+</body>
+</html>

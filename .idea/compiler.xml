@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-jsp" />
+        <module name="springboot-helloworld" />
+        <module name="springboot-jdbc" />
+        <module name="springboot-fileupload" />
+        <module name="springboot-freemarker" />
+        <module name="springboot-web" />
+        <module name="springboot-thymeleaf" />
+        <module name="springboot-swagger" />
+        <module name="springboot-mybatis" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot-swagger-ui" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-fileupload" options="-parameters" />
+      <module name="springboot-freemarker" options="-parameters" />
+      <module name="springboot-helloworld" options="-parameters" />
+      <module name="springboot-jdbc" options="-parameters" />
+      <module name="springboot-jsp" options="-parameters" />
+      <module name="springboot-mybatis" options="-parameters" />
+      <module name="springboot-swagger" options="-parameters" />
+      <module name="springboot-swagger-ui" options="" />
+      <module name="springboot-thymeleaf" options="-parameters" />
+      <module name="springboot-web" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>Hello thymelaf</h1>
+        <h2 th:text=${msg}></h2>
+        <input th:value="${msg}"/>
+<hr/>
+<!--      3.2字符串处理-->
+<!--    判断字符串是否为空，是返回ture/false-->
+    <span th:text="${#strings.isEmpty(msg)}"></span>
+<!--    判断是否包含指定的字符，返回ture/false-->
+    <span th:text="${#strings.contains(msg,'T')}"></span>
+<hr/>
+
+<!--        3.3日期格式化处理-->
+        <span th:text="${#dates.format(data)}"></span>
+        <span th:text="${#dates.year(data)}"></span>
+        <span th:text="${#dates.month(data)}"></span>
+        <span th:text="${#dates.day(data)}"></span>
+        <span th:text="${#dates.format(data,'YYYY/MM/HH,')}"></span>
+<hr/>
+<!--        3.4条件判断-->
+            <div>
+                <span th:if="${sex} == '男'">
+                    性别：男
+                </span>
+                <span th:if="${sex} == '女'">
+                    性别：女
+                </span>
+            </div>
+            <div th:switch="${id}">
+                <span th:case="1">id为1</span>
+                <span th:case="2">id为2</span>
+                <span th:case="3">id为3</span>
+            </div>
+
+<!--        3.5 迭代语句-->
+
+            <table border="1" width="50%">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr th:each="u : ${list}">
+                    <td th:text="${u.id}"></td>
+                    <td th:text="${u.name}"></td>
+                    <td th:text="${u.age}"></td>
+                </tr>
+            </table>
+            <table border="1" width="50%">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Index</th>
+                    <th>Cound</th>
+                    <th>Size</th>
+                    <th>odd</th>
+                    <th>Even</th>
+                    <th>First</th>
+                    <th>Last</th>
+                </tr>
+                <tr th:each="u , suibian: ${list}">
+                    <td th:text="${u.id}"></td>
+                    <td th:text="${u.name}"></td>
+                    <td th:text="${u.age}"></td>
+                    <td th:text="${suibian.index}"></td>
+                    <td th:text="${suibian.count}"></td>
+                    <td th:text="${suibian.size}"></td>
+                    <td th:text="${suibian.odd}"></td>
+                    <td th:text="${suibian.even}"></td>
+                    <td th:text="${suibian.first}"></td>
+                    <td th:text="${suibian.last}"></td>
+                </tr>
+            </table>
+<hr/>
+
+<!--            3.6 迭代Map-->
+        <table border="1" width="50%">
+            <tr>
+                <th>Value</th>
+            </tr>
+            <tr th:each="m : ${map}">
+                <td th:text="${m}"></td>
+        </table>
+        <hr/>
+        <table border="1" width="50%">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr th:each="m : ${map}">
+                <td th:text="${m.value.id}"></td>
+                <td th:text="${m.value.name}"></td>
+                <td th:text="${m.value.age}"></td>
+            </tr>
+        </table>
+        <hr/>
+
+<!--    URL表达式-->
+    <a href="@{http://www.baidu.com}">百度</a>
+
+</body>
+</html>
